@@ -3,7 +3,7 @@ import React from "react";
 function TemperatureFahrenheit({ valor, setValor }) {
   return (
     <div>
-      <label> ENTER TEMPERATURA IN CELSIUS: </label>
+      <label> ENTER TEMPERATURA IN FAHRENHEIT: </label>
       <input
         type="Number"
         value={valor}
