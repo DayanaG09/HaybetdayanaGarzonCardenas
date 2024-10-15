@@ -1,9 +1,10 @@
 
 import React from 'react';
 
-const Button = ({ onClick }) => {
+
+const Button = ({ getAdvises }) => {
   return (
-    <button onClick={onClick} className="button">
+    <button onClick={getAdvises} className="button">
       <img src="/dado.png" alt="dado" />
     </button>
   );

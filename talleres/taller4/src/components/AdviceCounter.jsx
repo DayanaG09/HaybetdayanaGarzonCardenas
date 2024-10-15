@@ -1,17 +1,15 @@
-import React, { useState } from 'react'; 
-import Button from './button';
+import React from 'react'; 
 
-const AdviceCounter = () => {
-  const [adviceNumber, setAdviceNumber] = useState(1);
+const AdviceCounter = ({adviceNumber}) => {
+  // const [adviceNumber, setAdviceNumber] = useState(1);
 
-  const incrementAdvice = () => {
-    setAdviceNumber(adviceNumber + 1);
-  };
+  // const incrementAdvice = () => {
+  //   setAdviceNumber(adviceNumber + 1);
+  // };
 
   return (
-    <div className="advice-container">
+    <div >
       <h2 className="advice-id">ADVICE #{adviceNumber}</h2>
-      <Button onClick={incrementAdvice} />
     </div>
   );
 };

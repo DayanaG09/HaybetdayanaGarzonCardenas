@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "./components/layout";
 import Button from "./components/button";
 import Container from "./components/container";
 import AdviceCounter from "./components/AdviceCounter";
-import useFetch from "./hooks/useFetch";
+import getAdvise from "./hooks/useFetch";
+
 import "./App.css";
 
 const App = () => {
-  const { data, isLoading, error } = useFetch(
-    "https://api.adviceslip.com/advice"
-  );
+  // var data = { data: null, error: null };
 
-  const advice = data?.slip?.advice;
+  const [advise, setAdvise] = useState({ data: { slip: null }, error: null });
+
+  const [adviceNumber, setAdviceNumber] = useState(0);
+
+  const getAdvises = async () => {
+    setAdvise(await getAdvise());
+    setAdviceNumber(adviceNumber + 1);
+  };
 
   return (
     <div className="layout-generator">
       <Container>
-        <AdviceCounter />
-        {error && <p>Error: {error}</p>}
-        {isLoading ? <p>Cargando consejo...</p> : <Layout advice={advice} />}
-        <Button onClick={() => window.location.reload()} />
+        <AdviceCounter adviceNumber={adviceNumber} />
+        {advise.error && <p>Error: {advise.error}</p>}
+        <Layout advice={advise.data.slip?.advice} />
+
+        <Button getAdvises={getAdvises} />
         <div className="divider"></div>
       </Container>
     </div>
