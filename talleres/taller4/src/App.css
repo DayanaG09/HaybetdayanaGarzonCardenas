@@ -1,0 +1,83 @@
+/* General body styling */
+body {
+  background-color: #1f2632; /* Color de fondo oscuro */
+  color: #cee3e9; /* Texto claro */
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.layout-text{
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: comics;
+}
+
+.layout-container {
+  background-color: #313a49; /* Fondo del contenedor */
+  padding: 40px 60px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  max-width: 450px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+.advice-id {
+  color: #53ffaa; /* Color verde para el ID */
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.text-title{
+  color: #53ffaa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+.advice-text {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: #cee3e9;
+}
+
+
+.divider {
+  background-color: #4e5d73;
+  height: 1px;
+  margin: 20px 0;
+}
+
+
+.button {
+  background-color: #53ffaa;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 0px 20px rgba(83, 255, 170, 0.7);
+  transition: box-shadow 0.3s ease;
+}
+
+.button img {
+  width: 24px;
+  height: 24px;
+}
+
+
+.button:hover {
+  box-shadow: 0px 0px 30px rgba(83, 255, 170, 1);
+}

@@ -49,3 +49,9 @@ li {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.dice-button:hover {
+    background-color: #40dca1;
+    transform: scale(1.1);
+  }
+  
