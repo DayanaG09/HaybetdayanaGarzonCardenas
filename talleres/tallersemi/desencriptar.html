@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desencriptador</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+      }
+      h2 {
+        color: #f82727;
+      }
+      p {
+        color: #0f3a18;
+      }
+      .result {
+        margin-top: 15px;
+        font-family: "Courier New", Courier, monospace;
+        padding: 10px;
+        color: #027cff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Desencriptador</h2>
+      <p>mensaje encriptado</p>
+      <h1>
+        ^[()`~^*/?`[()^+`-~()#[$()/~()%\\[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^\\{()*~¡[$[{()¡[()?=[]`\\¬]()¿()[{;+[$_~()`~]=\\]+~
+      </h1>
+      <p>Mensaje desencriptado:</p>
+      <p class="result" id="output"></p>
+    </div>
+
+    <script>
+      const encriptado =
+        "^[()`~^*/?`[()^+`-~()#[$()/~()%\\[]()}+[()[{=~¿()=$?%?!?]¡~()¿()`¬^~()[{=~()?+^[]=?()^\\{()*~¡[$[{()¡[()?=[]`\\¬]()¿()[{;+[$_~()`~]=\\]+~";
+      const diccionario = {
+        "?": "a",
+        "[": "e",
+        "\\": "i",
+        "~": "o",
+        "+": "u",
+        "()": " ",
+        "¿": "y",
+        "^": "m",
+        $: "r",
+        "#": "v",
+        "]": "n",
+        "%": "b",
+        "*": "p",
+        "`": "c",
+        _: "z",
+        "!": "j",
+        "¬": "ó",
+        "/": "l",
+        "-": "h",
+        "{": "s",
+        "=": "t",
+        "}": "q",
+        "¡": "d",
+        ";": "f",
+      };
+
+      function desencriptar(mensaje) {
+        return mensaje.replace(
+          /\(\)|[?~\[\]+\/^$¿#%*-_!`{=¡;}/}¡¬\\]/g,
+          (caracter) => {
+            return diccionario[caracter] || caracter;
+          }
+        );
+      }
+
+      const desencriptado = desencriptar(encriptado);
+      document.getElementById("output").textContent = desencriptado;
+    </script>
+  </body>
+</html>
